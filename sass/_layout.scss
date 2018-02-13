@@ -1,0 +1,99 @@
+.container{
+    max-width: 120rem;
+    margin: 8rem auto; //centered the element inside the body
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.header{
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; //vertically centered
+
+    @media only screen and (max-width: $bp-smallest){
+        flex-wrap: wrap; //move the search bar to another line, looking like it is on the bottom of the header
+        align-content: space-around; //give space around the elements
+        height: 11rem; //increase space to the container
+    }
+}
+
+.content{
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; //0 grow 0 shrink but just 18% width
+
+    display: flex; //giving space between legal and nav bar
+    flex-direction: column; //changes direction from x to Y 
+    justify-content: space-between; //gives space between elements
+}
+
+.hotel-view{
+    background-color: #fff;
+
+    flex: 1;
+}
+
+.detail{
+    font-size: 1.4rem; //description and user__review will inherit it
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+}
+
+.description{
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.user-reviews{
+    flex: 1; //occupying the rest of the space available
+
+    //text-align: center; do not use this property as it will change the alignment for everything
+
+    display: flex;
+    flex-direction: column; //change direction from a row to a column in order to keep the layout of all elements as we've been building
+    align-items: center; //remove the default stratch in order to give the right space to the button. otherwise the margin-button would stretch all along the element. 
+}
